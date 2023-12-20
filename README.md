@@ -21,13 +21,7 @@ cd llama2-lora-fine-tuning
 # 创建虚拟环境
 conda create -n llama2 python=3.9 -y
 conda activate llama2
-# 下载github.com上的依赖资源（需要反复试才能成功，所以单独安装）
-export GIT_TRACE=1
-export GIT_CURL_VERBOSE=1
-pip install git+https://github.com/PanQiWei/AutoGPTQ.git -i https://pypi.mirrors.ustc.edu.cn/simple --trusted-host=pypi.mirrors.ustc.edu.cn
-pip install git+https://github.com/huggingface/peft -i https://pypi.mirrors.ustc.edu.cn/simple
-pip install git+https://github.com/huggingface/transformers -i https://pypi.mirrors.ustc.edu.cn/simple
-# 安装其他依赖包
+# 安装依赖包
 pip install -r requirements.txt -i https://pypi.mirrors.ustc.edu.cn/simple
 # 验证bitsandbytes，如果cuda driver和runtime不一致或者有多个版本，需要指定版本先：export BNB_CUDA_VERSION=110，接下来运行微调也需要。
 python -m bitsandbytes
@@ -69,11 +63,7 @@ python merge_tokenizers.py \
 ```bash
 chmod +x finetune-lora.sh
 # 微调
-./finetune-lora.sh
-# 微调（后台运行）
-pkill -9 -f finetune-lora
-nohup ./finetune-lora.sh > train.log  2>&1 &
-tail -f train.log
+screen -L -Logfile train.log ./finetune-lora.sh
 ```
 
 ## 8、测试
