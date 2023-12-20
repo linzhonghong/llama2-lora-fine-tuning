@@ -31,6 +31,7 @@ pip install git+https://github.com/huggingface/transformers -i https://pypi.mirr
 pip install -r requirements.txt -i https://pypi.mirrors.ustc.edu.cn/simple
 # 验证bitsandbytes
 python -m bitsandbytes
+# 如果cuda driver和runtime不一致或者有多个版本，需要指定版本先：export BNB_CUDA_VERSION=110
 ```
 
 ## 4、下载原始模型
