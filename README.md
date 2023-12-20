@@ -1,6 +1,6 @@
 # 用Lora和deepspeed微调LLaMA2-Chat
 
-在两块P100（16G）上微调Llama-2-7b-chat模型。
+在一块P100或T4（16G）上微调Llama-2-7b-chat模型。
 
 数据源采用了alpaca格式，由train和validation两个数据源组成。
 
