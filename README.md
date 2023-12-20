@@ -11,7 +11,7 @@
 ## 2、Clone源码
 
 ```bash
-git clone https://github.com/git-cloner/llama2-lora-fine-tuning
+git clone https://github.com/linzhonghong/llama2-lora-fine-tuning
 cd llama2-lora-fine-tuning
 ```
 
