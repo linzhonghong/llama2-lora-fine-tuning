@@ -68,6 +68,8 @@ screen -L -Logfile train.log ./finetune-lora.sh
 
 ## 8、测试
 
+不用等整个训练过程完成，因为每200步会产生一个检查点，采用以下命令在命令行测试推理效果：
+
 ```bash
 CUDA_VISIBLE_DEVICES=0 python generate.py \
     --base_model './models/daryl149/llama-2-7b-chat-hf' \
